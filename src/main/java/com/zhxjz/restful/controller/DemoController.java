@@ -2,11 +2,20 @@ package com.zhxjz.restful.controller;
 
 import com.zhxjz.restful.entity.Demo;
 import com.zhxjz.restful.service.DemoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author zhangke
@@ -18,6 +27,18 @@ public class DemoController {
 
     @Resource
     private DemoService demoService;
+
+    private static final Logger Log = Logger.getLogger(DemoController.class.getName());
+
+    /**
+     * 获取http对象实体
+     * @return 实体对象
+     */
+    public HttpEntity getEntity(){
+        HttpHeaders headers = new HttpHeaders();
+        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        return new HttpEntity<String>(headers);
+    }
 
     /**
      * 新增一条demo记录
@@ -90,4 +111,26 @@ public class DemoController {
     public int delete(@PathVariable("id")Integer id){
         return demoService.delete(id);
     }
+
+    @Autowired
+    RestTemplate restTemplate;
+
+    /**
+     * 测试获取一条数据
+     * @return          AlarmClass
+     * @desc  http://127.0.0.1:19012/zhxjz/demos/delete/1
+     *
+     *  AlarmClass{id=1, name='遥测越限', description='遥测越限、跳变'}
+     */
+    @RequestMapping(path = "/delete/{id}", method = RequestMethod.POST)
+    public String getOneRecordData(@PathVariable("id") Integer id) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        Demo demo = new Demo();
+        demo.setId(id);
+        HttpEntity entity = new HttpEntity(demo,headers);
+        restTemplate.exchange("http://127.0.0.1:19012/zhxjz/demos/{1}", HttpMethod.POST, entity, String.class, 1).getBody();
+        return "redirect:/";
+    }
+
 }

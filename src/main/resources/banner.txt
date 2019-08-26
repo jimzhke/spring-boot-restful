@@ -1,0 +1,24 @@
+                hhhhhhh                                   jjjj
+                h:::::h                                  j::::j                 
+                h:::::h                                   jjjj                  
+                h:::::h                                                         
+zzzzzzzzzzzzzzzzzh::::h hhhhh       xxxxxxx      xxxxxxxjjjjjjjzzzzzzzzzzzzzzzzz
+z:::::::::::::::zh::::hh:::::hhh     x:::::x    x:::::x j:::::jz:::::::::::::::z
+z::::::::::::::z h::::::::::::::hh    x:::::x  x:::::x   j::::jz::::::::::::::z 
+zzzzzzzz::::::z  h:::::::hhh::::::h    x:::::xx:::::x    j::::jzzzzzzzz::::::z  
+      z::::::z   h::::::h   h::::::h    x::::::::::x     j::::j      z::::::z   
+     z::::::z    h:::::h     h:::::h     x::::::::x      j::::j     z::::::z    
+    z::::::z     h:::::h     h:::::h     x::::::::x      j::::j    z::::::z     
+   z::::::z      h:::::h     h:::::h    x::::::::::x     j::::j   z::::::z      
+  z::::::zzzzzzzzh:::::h     h:::::h   x:::::xx:::::x    j::::j  z::::::zzzzzzzz
+ z::::::::::::::zh:::::h     h:::::h  x:::::x  x:::::x   j::::j z::::::::::::::z
+z:::::::::::::::zh:::::h     h:::::h x:::::x    x:::::x  j::::jz:::::::::::::::z
+zzzzzzzzzzzzzzzzzhhhhhhh     hhhhhhhxxxxxxx      xxxxxxx j::::jzzzzzzzzzzzzzzzzz
+                                                         j::::j                 
+                                               jjjj      j::::j                 
+                                              j::::jj   j:::::j                 
+                                              j::::::jjj::::::j                 
+                                               jj::::::::::::j                  
+                                                 jjj::::::jjj                   
+                                                    jjjjjj
+                          ${spring-boot.formatted-version}
